@@ -1,4 +1,7 @@
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using RocketPizza.Models;
+using RocketPizza.Services;
 
 namespace RocketPizza.Controllers {
     [ApiController]
@@ -9,7 +12,8 @@ namespace RocketPizza.Controllers {
             
         }
 
-        // GET all
+        [HttpGet]
+        public ActionResult<List<Pizza>> GetAll() => PizzaService.GetAll();
 
         // GET by Id
 
